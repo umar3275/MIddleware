@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Currency Converter</title>
+<style>
+body{
+	max-width: 450px;
+	background: #FAFAFA;
+	padding: 30px;
+	margin: 50px auto;
+	box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+	border-radius: 10px;
+	border: 6px solid #305A72;
+}
+h1{
+    text-align:center;
+    color:#060966;
+    text:bold;
+}
+button{
+    
+	color:#520445;
+text-decoration: none;
+background: #60a3bc;
+padding: 15px;
+border-radius: 20px;
+display: inline-block;
+border: none;
+transition: all 0.4s ease 0s;
+}
+</style>
+<script >
+ 
+        function getInputValue(){
+    //assuming you are typing the amount in an input with id "myInput"
+    var amount = document.getElementById("myInput").value; 
+    var rate = document.getElementById("currency").value;
+    
+    var answer = document.getElementById('answer');
+       return answer.value= amount * rate;
+         
+   
+     //or print or display in DOM or whatever you want to do with the result
+}
+             
+        
+        function newVal(){
+           document.getElementById("myForm").reset();
+            
+            }
+
+            function sql()
+            {
+var data;
+data= new dataRequest();
+data.open("GET",mysql.js, nm=document.getElementById("answer").value,false);
+data.send(null);
+
+            }
+    
+    
+    
+</script>
+
+</head>
+<body >
+    <h1>Converter Form (WS2019)</h1>
+       
+    <form id="myForm" >
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label>Euro Amount:</label>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="text"  id="myInput">
+        </div>
+        <br>
+        <br>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label>Customer:</label>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text"  id="myInput">
+            </div>
+    <br>
+    <br>
+     
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <label>Currency:</label>
+        &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <select id="currency">
+    <option value="1.11" >Dollar</option>
+    <option value="0.86">Pound</option>
+    <option value="170">Rupees</option>
+  
+</select>
+    </div>
+     
+     <br>
+     <br>
+     <div>
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button type="button" onclick="getInputValue();">Convert</button>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <button type="button" onclick="newVal();">Reset</button>
+     </div>
+    <br>
+    <br>
+    
+    <output type="text" id="answer"></output>
+    </form>
+    
+    
+</body>
+</html>
